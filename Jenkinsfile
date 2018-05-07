@@ -64,9 +64,13 @@ oses.eachWithIndex { os, indexOfOs ->
             stages[stageKey] = {
                 node(label) {
                     timestamps {
+                        if (fileExists('f:\short\-box_maven-surefire_windows-D3JE5LUSDHZAH6PSBM7VEA43F2YV4YIXNNA7YJNAPNF6TGFMTH4A')) {
+                            println 'found short path'
+                        }
+
                         println "JOB_NAME: ${JOB_NAME}"
                         println "BRANCH_NAME: ${BRANCH_NAME}"
-                        customWorkspace "${JENKINS_HOME}/workspace/${JOB_NAME}"
+                        //customWorkspace "${JENKINS_HOME}/workspace/${JOB_NAME}"
                         println "TIBOR WORKSPACE: ${env.WORKSPACE}"
                         println "TIBOR WORKSPACE: ${WORKSPACE}"
                         println "TIBOR pwd: ${pwd()}"
