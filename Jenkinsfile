@@ -30,7 +30,7 @@ properties(
     ]
 )
 
-final def oses = ['linux', 'windows']
+final def oses = ['windows']
 final def mavens = env.BRANCH_NAME == 'master' ? ['3.2.x', '3.3.x', '3.5.x'] : ['3.5.x']
 final def jdks = env.BRANCH_NAME == 'master' ? [7, 8, 9, 10] : [7, 10]
 
@@ -64,11 +64,15 @@ oses.eachWithIndex { os, indexOfOs ->
             stages[stageKey] = {
                 node(label) {
                     timestamps {
+                        println "TIBOR WORKSPACE: ${env.WORKSPACE}"
+                        println "TIBOR WORKSPACE: ${WORKSPACE}"
+                        /*
                         //https://github.com/jacoco/jacoco/issues/629
                         def boolean makeReports = os == 'linux' && indexOfMaven == mavens.size() - 1 && jdk == 9
                         def failsafeItPort = 8000 + 100 * indexOfMaven + 10 * indexOfJdk
                         def allOptions = options + ["-Dfailsafe-integration-test-port=${failsafeItPort}", "-Dfailsafe-integration-test-stop-port=${1 + failsafeItPort}"]
                         buildProcess(stageKey, jdkName, jdkTestName, mvnName, goals, allOptions, mavenOpts, makeReports)
+                        */
                     }
                 }
             }
