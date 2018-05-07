@@ -66,7 +66,7 @@ oses.eachWithIndex { os, indexOfOs ->
                     timestamps {
                         println "JOB_NAME: ${JOB_NAME}"
                         println "BRANCH_NAME: ${BRANCH_NAME}"
-                        //customWorkspace "${JENKINS_HOME}/workspace/${URLDecoder.decode(JOB_NAME)}/${BUILD_NUMBER}"
+                        customWorkspace "${JENKINS_HOME}/workspace/${JOB_NAME}"
                         println "TIBOR WORKSPACE: ${env.WORKSPACE}"
                         println "TIBOR WORKSPACE: ${WORKSPACE}"
                         println "TIBOR pwd: ${pwd()}"
