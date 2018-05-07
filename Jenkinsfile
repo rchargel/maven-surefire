@@ -64,7 +64,9 @@ oses.eachWithIndex { os, indexOfOs ->
             stages[stageKey] = {
                 node(label) {
                     timestamps {
-                        customWorkspace "${JENKINS_HOME}/workspace/${URLDecoder.decode(JOB_NAME)}/${BUILD_NUMBER}"
+                        println "JOB_NAME: ${JOB_NAME}"
+                        println "BRANCH_NAME: ${BRANCH_NAME}"
+                        //customWorkspace "${JENKINS_HOME}/workspace/${URLDecoder.decode(JOB_NAME)}/${BUILD_NUMBER}"
                         println "TIBOR WORKSPACE: ${env.WORKSPACE}"
                         println "TIBOR WORKSPACE: ${WORKSPACE}"
                         println "TIBOR pwd: ${pwd()}"
