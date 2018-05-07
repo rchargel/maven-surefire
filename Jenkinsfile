@@ -64,7 +64,7 @@ oses.eachWithIndex { os, indexOfOs ->
             stages[stageKey] = {
                 node(label) {
                     timestamps {
-                        if (fileExists('f:\short\-box_maven-surefire_windows-D3JE5LUSDHZAH6PSBM7VEA43F2YV4YIXNNA7YJNAPNF6TGFMTH4A')) {
+                        if (fileExists('f:\\short\\-box_maven-surefire_windows-D3JE5LUSDHZAH6PSBM7VEA43F2YV4YIXNNA7YJNAPNF6TGFMTH4A')) {
                             println 'found short path'
                         }
 
