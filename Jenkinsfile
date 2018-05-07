@@ -64,8 +64,10 @@ oses.eachWithIndex { os, indexOfOs ->
             stages[stageKey] = {
                 node(label) {
                     timestamps {
+                        customWorkspace "${JENKINS_HOME}/workspace/${URLDecoder.decode(JOB_NAME)}/${BUILD_NUMBER}"
                         println "TIBOR WORKSPACE: ${env.WORKSPACE}"
                         println "TIBOR WORKSPACE: ${WORKSPACE}"
+                        println "TIBOR pwd: ${pwd()}"
                         /*
                         //https://github.com/jacoco/jacoco/issues/629
                         def boolean makeReports = os == 'linux' && indexOfMaven == mavens.size() - 1 && jdk == 9
